@@ -1,19 +1,28 @@
 CS = {}
 
 CS.init = function(){
-    CS.Garden = Game.Objects['Farm'].minigame;
-    CS.initializeTool();
-    if(Game.prefs.popups){
-        Game.Popup("Cookie sower loaded!");
+    if(Game.isMinigameReady(Game.Objects['Farm'])) {
+        CS.Garden = Game.Objects['Farm'].minigame;
+        CS.initializeTool();
+        if (Game.prefs.popups) {
+            Game.Popup("Cookie sower loaded!");
+        }
+        else {
+            Game.Notify("Cookie sower loaded!", "Cookie sower for Cookie Clicker version " + Game.version, '', 1, 1);
+        }
     }
     else{
-        Game.Notify("Cookie sower loaded!", "Cookie sower for Cookie Clicker version "+Game.version, '', 1, 1);
+        if (Game.prefs.popups) {
+            Game.Popup("You have not yet unlocked the garden minigame. Please reload the plugin when you do.");
+        }
+        else {
+            Game.Notify("Cookie sower loaded!", "You have not yet unlocked the garden minigame, though. Please reload the plugin when you do." + Game.version, '', 1, 1);
+        }
     }
 }
 CS.plantAll = function(){
     if(CS.Garden.seedSelected >= 0){
         var plantId = CS.Garden.seedSelected;
-        Game.Popup(CS.Garden.plantsById[plantId].name);
         for(var x = 0;x<6;x++){
             for(var y = 0;y<6;y++){
                 if(CS.Garden.isTileUnlocked(x,y) && CS.Garden.canPlant(CS.Garden.plantsById[plantId]) && (CS.Garden.plot[y][x][0] == 0)){
@@ -42,5 +51,4 @@ CS.initializeTool = function(){
     CS.Garden.toolsById=[];var n=0;for (var i in CS.Garden.tools){CS.Garden.tools[i].id=n;CS.Garden.tools[i].key=i;CS.Garden.toolsById[n]=CS.Garden.tools[i];n++;}
     CS.Garden.buildPanel();
 }
-
 CS.init();
