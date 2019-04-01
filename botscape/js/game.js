@@ -44,7 +44,7 @@ function removeCoins(amount){
 //Save and load functionality
 function save(){
     Cookies.set("save-data",JSON.stringify(gameData),{expires: 3650});
-    console.log("Game saved!");
+    notify("Game saved");
 }
 function load(){
     try{
@@ -115,16 +115,16 @@ function updateAvailable(){
     }
 }
 function updatePickaxe(){
-    $("#pickaxeLabel").text("Level " + gameData.pickaxeLevel + "");
-    $("#pickaxeIcon").attr("src","/content/pickaxe/" + gameData.pickaxeLevel + ".png");
+    $("#pickaxeLabel").text("Level " + gameData.pickaxeLevel + " Pickaxe");
+    $("#pickaxeIcon").attr("src","/botscape/content/pickaxe/" + gameData.pickaxeLevel + ".png");
     $("#pickaxeCost").text("Cost: " + ((gameData.pickaxeLevel+1) * 100));
     if(gameData.pickaxeLevel == 8){
         $("#pickaxeCost").text("Max level");
     }
 }
 function updateAxe(){
-    $("#axeLabel").text("Level " + gameData.axeLevel + "");
-    $("#axeIcon").attr("src","/content/axe/" + gameData.axeLevel + ".png");
+    $("#axeLabel").text("Level " + gameData.axeLevel + " Axe");
+    $("#axeIcon").attr("src","/botscape/content/axe/" + gameData.axeLevel + ".png");
     $("#axeCost").text("Cost: " + ((gameData.axeLevel+1) * 300));
     if(gameData.axeLevel == 8){
         $("#axeCost").text("Max level");

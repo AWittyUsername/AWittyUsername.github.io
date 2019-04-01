@@ -9,9 +9,9 @@ img {
     user-select: none;
     }
 #banner{
+    margin-left: 5%;
     text-align: center;
     font-size: 40px;
-    margin-bottom: 5%;
 }
 .menuLabel{
 }
@@ -55,10 +55,12 @@ img {
     margin-left: 12.5%;
     font-size: 26px;
 }
-
+#coinImage{
+    margin-left: 7%;
+}
 /*Upgrades*/
 #upgradeSection{
-    margin-top: 25%;
+    margin-top: 23%;
     background-color: #808080!important;
     overflow: auto;
     text-align: center;
@@ -69,7 +71,7 @@ img {
     float: left;
     margin: 0.5%;
     overflow: hidden;
-    height: 170px;
+    height: 150px;
 }
 .upgradeablesavailable{
     border: 3px solid green;
@@ -78,6 +80,9 @@ img {
     background-color: rgb(75, 75, 75)
 }
 .upgradeLabel{
+    position: relative;
+    width: 100%;
+    font-size: 16px;
 }
 .upgradeIcon{
     margin-top: 3%;
