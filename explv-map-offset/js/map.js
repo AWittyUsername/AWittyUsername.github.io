@@ -59,7 +59,6 @@ $(document).ready(function () {
     var prevMouseRect, prevMousePos;
     map.on('mousemove', function(e) {
         var mousePos = Position.fromLatLng(map, e.latlng, map.plane);
-
         if (prevMousePos !== mousePos) {
 
             prevMousePos = mousePos;

@@ -42,7 +42,7 @@ export var GridControl = L.Control.extend({
     _createGridFeature: function() {
         var gridFeatureGroup = new L.FeatureGroup();
 
-        for (var x = MIN_X-0.25; x <= MAX_X; x += REGION_WIDTH) {
+        for (var x = MIN_X; x <= MAX_X; x += REGION_WIDTH) {
             var startPos = new Position(x, MIN_Y, 0);
             var endPos = new Position(x, MAX_Y, 0);
 

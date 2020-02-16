@@ -2,21 +2,22 @@
 
 export const MAP_HEIGHT_PX = 296704; // Total height of the map in px at max zoom level
 export const RS_TILE_WIDTH_PX = 32, RS_TILE_HEIGHT_PX = 32; // Width and height in px of an rs tile at max zoom level
-export const RS_OFFSET_X = 1152; // Amount to offset x coordinate to get correct value
+export const RS_OFFSET_X = 1152.25; // Amount to offset x coordinate to get correct value
 export const RS_OFFSET_Y = 8328; // Amount to offset y coordinate to get correct value
 
 export class Position {
 
     constructor(x, y, z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
+        this.x = Math.round(x);
+        this.y = Math.round(y);
+        this.z = Math.round(z);
     }
 
     static fromLatLng(map, latLng, z) {
         var point = map.project(latLng, map.getMaxZoom());
         var y = MAP_HEIGHT_PX - point.y + (RS_TILE_HEIGHT_PX / 4);
         y = Math.round((y - RS_TILE_HEIGHT_PX) / RS_TILE_HEIGHT_PX) + RS_OFFSET_Y;
+        point.x += 16;
         var x = Math.round((point.x - RS_TILE_WIDTH_PX) / RS_TILE_WIDTH_PX) + RS_OFFSET_X;
         return new Position(x, y, z);
     }
