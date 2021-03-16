@@ -1,0 +1,29 @@
+body{
+    background-color: purple;
+    color: white;
+}
+h1,h2{
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    color: lawngreen;
+}
+h1{
+    text-align: center;
+}
+h2{
+    color:lightcoral;
+}
+#design-img{
+    float:right;
+    margin-right: 5%;
+}
+a{
+    color:red;
+}
+.title-img{
+    width:2em;
+    height:auto;
+}
+.flash-content{
+    color: #CB0FEF;
+    text-align: center;
+}
