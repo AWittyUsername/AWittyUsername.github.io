@@ -21,7 +21,6 @@ const MASTER_MAP = [
             {"name": "WhatsApp", "shortcutKey": "", "url": "https://web.whatsapp.com/"},
             {"name": "r/2007scape", "shortcutKey": "", "url": "https://www.reddit.com/r/2007scape/"},
             {"name": "r/archlinux", "shortcutKey": "", "url": "https://www.reddit.com/r/archlinux/"},
-            {"name": "4chan", "shortcutKey": "", "url": "https://4chan.org/"}
         ]
     },
     {
